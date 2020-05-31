@@ -57,35 +57,29 @@ pipeline {
               echo "Display Name : ${currentBuild.displayName}"
               echo "Result : ${currentBuild.result}"
               echo "Build Number : ${currentBuild.number}"
-              
-             
-              
-              
-                 
            
            }
            
             echo  "Running ${env.BUILD_ID} ${env.BUILD_DISPLAY_NAME} on ${env.NODE_NAME} and JOB ${env.JOB_NAME}"
-           
             echo  'git repository name is :' + repository_name
             echo "$url$repository_name$ext"
             
           // echo  'git Clone url  is : https://github.com/$owner/$repository_name.git'
            
            script{
-        def changeLogSets = currentBuild.changeSets
-for (int i = 0; i < changeLogSets.size(); i++) {
-    def entries = changeLogSets[i].items
-    for (int j = 0; j < entries.length; j++) {
-        def entry = entries[j]
-        echo "${entry.commitId} by ${entry.author} on ${new Date(entry.timestamp)}: ${entry.msg}"
-        def files = new ArrayList(entry.affectedFiles)
-        for (int k = 0; k < files.size(); k++) {
-            def file = files[k]
-            echo "  ${file.editType.name} ${file.path}"
-        }
-    }
-}
+				def changeLogSets = currentBuild.changeSets
+				for (int i = 0; i < changeLogSets.size(); i++) {
+					def entries = changeLogSets[i].items
+					for (int j = 0; j < entries.length; j++) {
+						def entry = entries[j]
+						echo "${entry.commitId} by ${entry.author} on ${new Date(entry.timestamp)}: ${entry.msg}"
+							def files = new ArrayList(entry.affectedFiles)
+							for (int k = 0; k < files.size(); k++) {
+								def file = files[k]
+								echo "  ${file.editType.name} ${file.path}"
+							}
+					}
+				}
 
            }    
            
