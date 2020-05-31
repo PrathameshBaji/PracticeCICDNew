@@ -1,7 +1,7 @@
 #!/usr/bin/env grrovy
 
-def myvar1 = 'https://github.com'
-def myvar2 = '.git'
+def myvar1 = "https://github.com"
+def myvar2 = ".git"
 
 pipeline {
    agent any
@@ -9,8 +9,12 @@ pipeline {
    stages {
       stage('Build') {
         steps {
+           echo "$myvar1"
+           echo "$myvar2"
+           
            script{
-              echo "$myvar1$repository_name$ext"
+              echo "$myvar1"
+              echo "$myvar2"
            }
  
           echo  "Running ${env.BUILD_ID} ${env.BUILD_DISPLAY_NAME} on ${env.NODE_NAME} and JOB ${env.JOB_NAME}"
