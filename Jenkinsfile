@@ -3,6 +3,7 @@
 def myvar1 = "https://github.com"
 def myvar2 = ".git"
 
+
 pipeline {
    agent any
 
