@@ -34,24 +34,12 @@ pipeline {
               echo "${scm.branches}"
               echo "${scm.extensions}"
               
-               //Checkout new SCM
-        //       checkout([$class: 'GitSCM', 
-          //         branches: [[name: '*/master']], 
-           //        doGenerateSubmoduleConfigurations: false, 
-           //        extensions: [[$class: 'CleanCheckout']], 
-           //        submoduleCfg: [], 
-            //       userRemoteConfigs: [[url: 'https://github.com/PrathameshBaji/PracticeCICDNew.git']]
-           //    ])
-		   
-   //checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'subdirectory2']], submoduleCfg: [], userRemoteConfigs: [[url: 'repo2.git']]])
               git 'https://github.com/PrathameshBaji/PracticeCICDNew.git'
 		   
-              echo " Hi Prathamesh here are new SCM details.. "
-              // New scm from where respository specific webhook request received (Dynamic)
-              echo "New : ${scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.git")[0]}"
-              echo "New : ${scm.getUserRemoteConfigs()[0].getUrl()}"
-              echo "New : ${scm.branches}"
-              echo "New : ${scm.extensions}"
+              echo "${scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.git")[0]}"
+              echo "${scm.getUserRemoteConfigs()[0].getUrl()}"
+              echo "${scm.branches}"
+              echo "${scm.extensions}"
               
               //Jenkins Build Details
               echo "Project Name : ${currentBuild.projectName}"
