@@ -43,6 +43,7 @@ pipeline {
                    userRemoteConfigs: [[credentialsId: 'git-credentials', url: 'https://github.com/PrathameshBaji/PracticeCICDNew.git']]
                ])
               
+              echo " Hi Prathamesh here are new SCM details.. "
               // New scm from where respository specific webhook request received (Dynamic)
               echo "New : ${scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.git")[0]}"
               echo "New : ${scm.getUserRemoteConfigs()[0].getUrl()}"
