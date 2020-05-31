@@ -33,8 +33,10 @@ pipeline {
               echo "${scm.getUserRemoteConfigs()[0].getUrl()}"
               echo "${scm.branches}"
               echo "${scm.extensions}"
-              
-              bat "git 'https://github.com/PrathameshBaji/PracticeCICDNew.git' "
+             
+	      checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false,  extensions: [[$class: 'CleanCheckout']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/PrathameshBaji/PracticeCICDNew.git']]])
+    
+              load 'Jenkinsfile'
 		   
               echo "${scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.git")[0]}"
               echo "${scm.getUserRemoteConfigs()[0].getUrl()}"
