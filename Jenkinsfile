@@ -28,7 +28,7 @@ pipeline {
               echo "${myvar1}" + repository_name +"${myvar2}"
               echo "Clone URL :${clone_url}"
             
-              // scm which is checked out details
+              // scm where Generic Jenkinsfile 
               echo "${scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.git")[0]}"
               echo "${scm.getUserRemoteConfigs()[0].getUrl()}"
               echo "${scm.branches}"
@@ -42,6 +42,13 @@ pipeline {
                    submoduleCfg: [], 
                    userRemoteConfigs: [[credentialsId: 'git-credentials', url: ${clone_url}]]
                ])
+              
+              // New scm from where respository specific webhook request received
+              echo "New : ${scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.git")[0]}"
+              echo "New : ${scm.getUserRemoteConfigs()[0].getUrl()}"
+              echo "New : ${scm.branches}"
+              echo "New : ${scm.extensions}"
+              
               
               //Jenkins Build Details
               echo "Project Name : ${currentBuild.projectName}"
