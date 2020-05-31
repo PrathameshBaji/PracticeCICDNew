@@ -35,13 +35,13 @@ pipeline {
               echo "${scm.extensions}"
               
                //Checkout new SCM
-               checkout([$class: 'GitSCM', 
-                   branches: [[name: '*/master']], 
-                   doGenerateSubmoduleConfigurations: false, 
-                   extensions: [[$class: 'CleanCheckout']], 
-                   submoduleCfg: [], 
-                   userRemoteConfigs: [[url: 'https://github.com/PrathameshBaji/PracticeCICDNew.git']]
-               ])
+       //        checkout([$class: 'GitSCM', 
+             //      branches: [[name: '*/master']], 
+             //      doGenerateSubmoduleConfigurations: false, 
+             //      extensions: [[$class: 'CleanCheckout']], 
+             //      submoduleCfg: [], 
+             //      userRemoteConfigs: [[url: 'https://github.com/PrathameshBaji/PracticeCICDNew.git']]
+            //   ])
 		   
    //checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'subdirectory2']], submoduleCfg: [], userRemoteConfigs: [[url: 'repo2.git']]])
               
