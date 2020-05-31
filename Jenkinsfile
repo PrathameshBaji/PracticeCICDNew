@@ -13,6 +13,7 @@ pipeline {
         steps {
            
           echo "Hi Prathamesh Test again..."
+		
           echo "${myvar1}"
           echo "${myvar2}"
            
