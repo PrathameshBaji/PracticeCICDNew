@@ -40,7 +40,7 @@ pipeline {
                    doGenerateSubmoduleConfigurations: false, 
                    extensions: [[$class: 'CleanCheckout']], 
                    submoduleCfg: [], 
-                   userRemoteConfigs: [[credentialsId: 'git-credentials', url: ${clone_url}]]
+                   userRemoteConfigs: [[credentialsId: 'git-credentials', url: 'https://github.com/PrathameshBaji/PracticeCICDNew.git']]
                ])
               
               // New scm from where respository specific webhook request received (Dynamic)
