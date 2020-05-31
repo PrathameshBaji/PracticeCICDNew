@@ -10,10 +10,12 @@ pipeline {
    stages {
       stage('Build') {
         steps {
+           echo "Hi Prathamesh ..."
            echo "${myvar1}"
            echo "${myvar2}"
            
            script{
+              echo  'git repository name is :' + repository_name
               echo "${myvar1}"
               echo "${myvar2}"
            }
