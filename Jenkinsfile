@@ -2,7 +2,7 @@
 
 def myvar1 = "https://github.com"
 def myvar2 = ".git"
-
+def repo = repository_name
 
 pipeline {
    agent any
@@ -21,7 +21,7 @@ pipeline {
               echo "${myvar2}"
               echo  'git repository name is :' + repository_name
               echo "$url$repository_name$ext"
-              echo "${myvar1}+ $repository_name$+ ${myvar2}"
+              echo "${myvar1}${repo}${myvar2}"
            }
            
             echo  "Running ${env.BUILD_ID} ${env.BUILD_DISPLAY_NAME} on ${env.NODE_NAME} and JOB ${env.JOB_NAME}"
