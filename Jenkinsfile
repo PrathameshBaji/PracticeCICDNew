@@ -12,7 +12,7 @@ pipeline {
       stage('Build') {
         steps {
            
-          echo "Hi Prathamesh ..."
+          echo "Hi Prathamesh Test again..."
           echo "${myvar1}"
           echo "${myvar2}"
            
