@@ -34,7 +34,7 @@ pipeline {
               echo "${scm.branches}"
               echo "${scm.extensions}"
               
-              git 'https://github.com/PrathameshBaji/PracticeCICDNew.git'
+              bat "git 'https://github.com/PrathameshBaji/PracticeCICDNew.git' "
 		   
               echo "${scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.git")[0]}"
               echo "${scm.getUserRemoteConfigs()[0].getUrl()}"
