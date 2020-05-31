@@ -52,7 +52,6 @@ pipeline {
               echo "New : ${scm.branches}"
               echo "New : ${scm.extensions}"
               
-              
               //Jenkins Build Details
               echo "Project Name : ${currentBuild.projectName}"
               echo "Full ProjectName : ${currentBuild.fullProjectName}"
