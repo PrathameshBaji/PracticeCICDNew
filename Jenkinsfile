@@ -34,6 +34,14 @@ pipeline {
               echo "${scm.branches}"
               echo "${scm.extensions}"
               
+               //Checkout new SCM
+               checkout([$class: 'GitSCM', 
+                   branches: [[name: '*/master']], 
+                   doGenerateSubmoduleConfigurations: false, 
+                   extensions: [[$class: 'CleanCheckout']], 
+                   submoduleCfg: [], 
+                   userRemoteConfigs: [[credentialsId: 'git-credentials', url: ${clone_url}]]
+               ])
               
               //Jenkins Build Details
               echo "Project Name : ${currentBuild.projectName}"
@@ -42,6 +50,7 @@ pipeline {
               echo "Result : ${currentBuild.result}"
               echo "Build Number : ${currentBuild.number}"
               
+             
               
               
                  
