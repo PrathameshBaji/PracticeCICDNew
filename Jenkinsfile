@@ -40,8 +40,10 @@ pipeline {
                    doGenerateSubmoduleConfigurations: false, 
                    extensions: [[$class: 'CleanCheckout']], 
                    submoduleCfg: [], 
-                   userRemoteConfigs: [[credentialsId: 'git-credentials', url: 'https://github.com/PrathameshBaji/PracticeCICDNew.git']]
+                   userRemoteConfigs: [[url: 'https://github.com/PrathameshBaji/PracticeCICDNew.git']]
                ])
+		   
+   //checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'subdirectory2']], submoduleCfg: [], userRemoteConfigs: [[url: 'repo2.git']]])
               
               echo " Hi Prathamesh here are new SCM details.. "
               // New scm from where respository specific webhook request received (Dynamic)
