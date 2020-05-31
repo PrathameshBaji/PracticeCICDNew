@@ -24,7 +24,7 @@ pipeline {
           echo  'git repository name is :' + repository_name
           
            echo "$url$repository_name$ext"
-           
+            
           // echo  'git Clone url  is : https://github.com/$owner/$repository_name.git'
            
         }
